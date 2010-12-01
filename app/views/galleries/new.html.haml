@@ -1,0 +1,10 @@
+= form_for @gallery do |form|
+  = form.error_messages
+  
+  %fieldset
+    %ul
+      %li
+        = form.label :title
+        = form.text_field :title
+      %li
+        = form.submit "Create Gallery"

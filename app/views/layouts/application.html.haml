@@ -23,6 +23,10 @@
       .header
         = render 'shared/session_links'
 
+        %ul.nav
+          - if current_user
+            = link_to "Add Gallery", new_gallery_path
+
       .main{:role => "main"}
         = render 'shared/flashes'
         = yield

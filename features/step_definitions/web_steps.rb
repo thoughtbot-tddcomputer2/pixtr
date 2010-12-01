@@ -214,6 +214,10 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   end
 end
 
+Then /^I should see errors$/ do
+  page.should have_css(".errorExplanation")
+end
+
 Then /^show me the page$/ do
   save_and_open_page
 end

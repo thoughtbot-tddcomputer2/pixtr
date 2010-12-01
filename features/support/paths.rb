@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new create_gallery page/
+      new_create_gallery_path
+
 
     # Add more mappings here.
     when /the sign up page/i
@@ -18,6 +21,8 @@ module NavigationHelpers
       sign_in_path
     when /the password reset request page/i
       new_password_path
+    when /^(.*)'s show page$/i
+      gallery_path(Gallery.find_by_title($1))
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
