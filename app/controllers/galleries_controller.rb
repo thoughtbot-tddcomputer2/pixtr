@@ -1,6 +1,10 @@
 class GalleriesController < ApplicationController
   before_filter :authenticate, :only => [:new, :create]
   
+  def index
+    all_galleries
+  end
+  
   def new
     @gallery = Gallery.new
   end
@@ -15,6 +19,8 @@ class GalleriesController < ApplicationController
   end
   
   def show
-    @gallery = current_user.galleries.find(params[:id])
+    @gallery = Gallery.find(params[:id])
+    @image = @gallery.images.build
+    @comment = @gallery.comments.build
   end
 end

@@ -4,7 +4,7 @@ class HomeController < ApplicationController
       dashboard
       render :action => "dashboard"
     end
-    @galleries = Gallery.all
+    all_galleries
   end
   
   def dashboard

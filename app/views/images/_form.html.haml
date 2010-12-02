@@ -1,0 +1,13 @@
+= form_for [@gallery, @image], :html => {:multipart => true} do |form|
+  = form.error_messages
+  
+  %fieldset
+    %ul
+      %li
+        = form.label :title
+        = form.text_field :title
+      %li
+        = form.label :photo
+        = form.file_field :photo
+      %li
+        = form.submit "Upload Image"

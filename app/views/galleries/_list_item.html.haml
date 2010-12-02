@@ -1,0 +1,4 @@
+%li{:id => dom_id(list_item)}
+  %h2= link_to list_item.title, gallery_path(list_item)
+  - unless current_user
+    %span.email= list_item.user.email

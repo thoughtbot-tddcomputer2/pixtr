@@ -7,6 +7,7 @@ gem 'dynamic_form'
 gem 'haml'
 gem 'haml-rails'
 gem 'formtastic'
+gem 'paperclip'
 
 group :development, :test do
   gem 'heroku'

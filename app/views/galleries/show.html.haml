@@ -1,1 +1,22 @@
 %h1= @gallery.title
+
+%ul
+  - @gallery.images.each do |image|
+    %li{:id => dom_id(image)}
+      = image_tag image.photo.url
+      %h2= image.title
+
+= render :partial => "images/form"
+
+- if current_user
+  = form_for [@gallery, @comment] do |form|
+    %fieldset
+      %ul
+        %li
+          = form.label :text, "Comment"
+          = form.text_area :text
+        %li
+          = form.submit "Add Comment"
+
+%ul.comments
+  = render :partial => "comments/list_item", :collection => @gallery.comments
