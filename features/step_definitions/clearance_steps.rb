@@ -30,6 +30,10 @@ end
 
 # Session
 
+Given /^I am signed out$/ do
+  visit sign_out_path
+end
+
 Then /^I should be signed in$/ do
   Given %{I am on the homepage} 
   Then %{I should see "Sign out"} 

@@ -1,6 +1,5 @@
-- if current_user
-  %h2 My Galleries
-  
-  %ul
-    - @galleries.each do |gallery|
-      %li= gallery.title
+%ul
+  - @galleries.each do |gallery|
+    %li{:id => dom_id(gallery)}
+      %h2= gallery.title
+      %span.email= gallery.user.email

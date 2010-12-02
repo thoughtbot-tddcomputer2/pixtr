@@ -1,10 +1,12 @@
 class GalleriesController < ApplicationController
+  before_filter :authenticate, :only => [:new, :create]
+  
   def new
     @gallery = Gallery.new
   end
   
   def create
-    @gallery = Gallery.new(params[:gallery])
+    @gallery = current_user.galleries.new(params[:gallery])
     if @gallery.save
       redirect_to @gallery, :notice => "Gallery created!"
     else
@@ -13,6 +15,6 @@ class GalleriesController < ApplicationController
   end
   
   def show
-    @gallery = Gallery.find(params[:id])
+    @gallery = current_user.galleries.find(params[:id])
   end
 end

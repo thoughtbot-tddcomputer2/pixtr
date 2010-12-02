@@ -1,0 +1,6 @@
+- if current_user
+  %h2 My Galleries
+  
+  %ul
+    - @galleries.each do |gallery|
+      %li= gallery.title

@@ -12,6 +12,7 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = csrf_meta_tag
 
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
@@ -34,8 +35,9 @@
       .footer
 
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
-    %script{:src => "/javascript/plugins.js"}
-    %script{:src => "/javascript/script.js"}
+    %script{:src => "/javascripts/rails.js"}
+    %script{:src => "/javascripts/plugins.js"}
+    %script{:src => "/javascripts/script.js"}
     /[if lt IE 7 ]
       :javascript
         $.getScript("/javascript/dd_belatedpng.js",function(){ DD_belatedPNG.fix('img, .png_bg'); });

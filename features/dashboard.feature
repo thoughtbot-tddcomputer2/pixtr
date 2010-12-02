@@ -1,8 +1,8 @@
-Feature: Display Galleries
-  As a photographer
-  I want to view my galleries
+Feature: User Dashboard
+  As a user
+  I want to be able to view all of my galleries
   
-  Scenario: Viewing my galleries
+  Scenario: Display galleries
     Given I have signed in with "bsmith@noemail.com/password"
     And the following galleries exist:
       | title     | user                     |
@@ -13,3 +13,4 @@ Feature: Display Galleries
     Then I should see "Gallery 1"
     And I should see "Gallery 2"
     And I should not see "Gallery 3"
+    
